@@ -378,3 +378,15 @@ end
 Given /^I run the invite migration$/ do
 
 end
+
+Then(/^I should see a "(.*?)" widget$/) do |label|
+ # wait_for_ajax
+  expect(page).to have_css('div#google_translate_element', :text => "#{label}")
+end
+
+When(/^I select language "([^"]*)"$/) do |lang|
+  find(:xpath, "//div[@id='google_translate_element']").click
+  find('span', :text => lang).click
+  steps %Q{ Then I should see "#{lang}" }
+ # wait_for_ajax
+end
