@@ -28,7 +28,7 @@ end
 
 group :development do
   #gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'debugger', '1.6.6'
+  gem 'debugger', '~> 1.6.8'
   gem 'railroady'
 end
 
@@ -97,6 +97,4 @@ gem 'url_validator'
 
 gem 'rails_autolink'
 gem 'acts_as_paranoid'
-
-#no real change testing build
 
